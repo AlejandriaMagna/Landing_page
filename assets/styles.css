@@ -1,0 +1,580 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente de arial a sans serif, si no encuentra una, va con la otra */
+    margin: 0; /* Elimina el margen por defecto del body */
+    padding: 0; /* Sin padding porque es el body */
+    background-color: #ffffff;
+    color: #2a4d4d; /* Verde petróleo */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1f3d3d; /* Verde petróleo más oscuro los títulos */
+}
+
+a {
+    color: #2a4d4d;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1f3d3d;
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: #2a4d4d;
+    color: #ffffff;
+    padding: 1rem 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #d4f0f0; /* Verde petróleo claro */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #d4f0f0; /* Verde petróleo claro */
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.hero h2 {
+    color: #1f3d3d;
+    font-size: 2.5rem;
+}
+
+.hero p {
+    color: #2a4d4d;
+    font-size: 1.2rem;
+}
+
+.hero .cta-button {
+    background-color: #2a4d4d;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero .cta-button:hover {
+    background-color: #1f3d3d;
+}
+
+/* Sections */
+section {
+    padding: 2rem 1rem;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjetas o cuadros que contienen la información de servicios */
+.service-card { 
+    background-color: #ffffff;
+    border: 1px solid #d4f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Card de servicio cuando estén en hover */
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* propiedades del título de la card */
+.service-card h3 {
+    color: #1f3d3d;
+    margin: 1rem;
+}
+
+.service-card p {
+    color: #2a4d4d;
+    margin: 0 1rem 1rem;
+}
+
+.service-card .read-more {
+    display: block;
+    text-align: center;
+    background-color: #2a4d4d;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.service-card .read-more:hover {
+    background-color: #1f3d3d;
+}
+
+/* Estilo para las imágenes de las cards */
+.service-image img, .service-card img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Altura fija para uniformar las imágenes */
+    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 1rem; /* Espacio debajo de la imagen */
+    padding: 10px; /* Espaciado interno opcional */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+/* Descripción del servicio */
+.service-description {
+    display: -webkit-box; /* Necesario para usar -webkit-line-clamp */
+    -webkit-line-clamp: 2; /* Limita el texto a 2 líneas */
+    -webkit-box-orient: vertical; /* Orientación vertical para el recorte */
+    overflow: hidden; /* Oculta el texto que excede las 2 líneas */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) */
+    margin-bottom: 1rem; /* Espacio debajo del texto */
+}
+
+.service-description.expanded {
+    -webkit-line-clamp: unset; /* Elimina la limitación de líneas */
+    overflow: visible; /* Muestra todo el texto */
+}
+
+/* Estilo específico para imágenes de pacientes */
+
+/* Carrusel horizontal para pacientes */
+.patients-grid {
+    display: flex; /* Alinea las imágenes en una fila */
+    gap: 1rem; /* Espaciado entre las imágenes */
+    overflow-x: auto; /* Permite desplazamiento horizontal */
+    padding: 1rem; /* Espaciado interno */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+.patient-photo {
+    flex: 0 0 auto; /* Evita que las imágenes se reduzcan o expandan */
+    width: 150px; /* Ancho fijo para cada imagen */
+    text-align: center; /* Centra el contenido dentro de cada tarjeta */
+}
+
+.patient-photo img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 150px; /* Altura fija para uniformar las imágenes */
+    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+/*Publicación Section*/
+/* Contenedor de publicaciones */
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Diseño responsivo */
+    gap: 1.5rem; /* Espaciado entre las tarjetas */
+}
+
+/* Tarjetas de publicaciones */
+.publication-card {
+    background-color: #ffffff;
+    border: 1px solid #d4f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.publication-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen de las publicaciones */
+.publication-image img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Altura fija para uniformar las imágenes */
+    object-fit: contain; /* Muestra la imagen completa sin recortarla */
+    border-bottom: 1px solid #d4f0f0; /* Línea divisoria opcional */
+    background-color: #f9f9f9; /* Fondo opcional para rellenar el espacio vacío */
+}
+
+/* Contenido de las publicaciones */
+.publication-content h3 {
+    color: #1f3d3d;
+    margin: 1rem;
+}
+
+.publication-content p {
+    color: #2a4d4d;
+    margin: 0 1rem 1rem;
+    display: -webkit-box; /* Necesario para usar -webkit-line-clamp */
+    -webkit-line-clamp: 2; /* Limita el texto a 2 líneas */
+    -webkit-box-orient: vertical; /* Orientación vertical para el recorte */
+    overflow: hidden; /* Oculta el texto que excede las 2 líneas */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) */
+}
+
+.publication-content p.expanded {
+    -webkit-line-clamp: unset; /* Elimina la limitación de líneas */
+    overflow: visible; /* Muestra todo el texto */
+}
+
+/* Botón "Ver más" */
+.publication-content .read-more {
+    display: block;
+    text-align: center;
+    background-color: #2a4d4d;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.publication-content .read-more:hover {
+    background-color: #1f3d3d;
+}
+
+/*Productos Section*/
+/* Sección de productos */
+.products {
+    background-color: #ebd938; /* Fondo amarillo claro */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.products h2 {
+    color: #d32f2f; /* Rojo llamativo */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Grid de productos */
+.products-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los productos se ajusten en pantallas pequeñas */
+}
+
+/* Tarjetas de productos */
+.product-card {
+    background-color: #f5b8a0; /* Fondo verde claro */
+    border: 2px solid #0288d1; /* Borde azul */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px; /* Ancho fijo para las tarjetas */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen de los productos */
+.product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #0288d1;
+}
+
+/* Contenido de los productos */
+.product-content h3 {
+    color: #060542b7; /* Azul llamativo */
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.product-content p {
+    color: #333;
+    margin: 0 1rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Estilo de precios */
+.product-price {
+    margin-bottom: 1rem;
+}
+
+.price-before {
+    text-decoration: line-through; /* Precio tachado */
+    color: #757575; /* Gris oscuro */
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.price-now {
+    color: #f33737; /* Rojo llamativo */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Botón de agregar al carrito */
+.add-to-cart {
+    background-color: #d32f2f; /* Rojo llamativo */
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Botón de eliminar en el carrito */
+.remove-item {
+    background-color: #d32f2f; /* Rojo llamativo */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.remove-item:hover {
+    background-color: #b71c1c; /* Rojo más oscuro */
+}
+
+.add-to-cart:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* Carrito de compras */
+.shopping-cart {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 2px solid #0288d1; /* Azul */
+    border-radius: 8px;
+    background-color: #fcc17d; /* Fondo verde claro */
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-items {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.checkout-button {
+    background-color: #d32f2f; /* Rojo llamativo */
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+
+/* Testimonials Section */
+
+/* Alinear los videos en una sola línea y uniformar su tamaño */
+.testimonials-slider {
+    display: flex; /* Activa el diseño en fila */
+    gap: 1rem; /* Espaciado entre los videos */
+    justify-content: center; /* Centra los videos horizontalmente */
+    align-items: center; /* Alinea los videos verticalmente */
+    overflow-x: auto; /* Permite desplazamiento horizontal si no caben todos */
+}
+
+.testimonial-card {
+    flex: 0 0 auto; /* Evita que las tarjetas se reduzcan o expandan */
+    width: 300px; /* Ancho fijo para todas las tarjetas */
+    text-align: center; /* Centra el contenido dentro de cada tarjeta */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+.testimonial-card video {
+    width: 100%; /* Asegura que el video ocupe todo el ancho de la tarjeta */
+    height: 200px; /* Altura fija para uniformar los videos */
+    object-fit: cover; /* Recorta el video para que encaje sin deformarse */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
+}
+
+/* Estilo base para el formulario */
+
+
+/* Estilo base para el formulario */
+.contact-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #d4f0f0; /* Fondo verde petróleo claro */
+    border: 2px solid #2a4d4d; /* Borde verde petróleo */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #1f3d3d; /* Verde petróleo oscuro */
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    flex: 1 1 100%;
+}
+
+.contact-form .form-group {
+    flex: 1 1 calc(50% - 1rem); /* Cada campo ocupa el 50% del ancho */
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #1f3d3d; /* Verde petróleo oscuro */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 2px solid #2a4d4d; /* Verde petróleo */
+    box-shadow: 0 0 5px rgba(42, 77, 77, 0.5);
+    outline: none;
+}
+
+.contact-form .radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-form .submit-button {
+    background-color: #2a4d4d; /* Verde petróleo */
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    flex: 1 1 100%; /* Botón ocupa todo el ancho */
+    text-align: center;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #1f3d3d; /* Verde petróleo más oscuro */
+    transform: scale(1.05);
+}
+
+.contact-form .error-message {
+    color: #d32f2f; /* Rojo llamativo */
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.contact-form .error-message.active {
+    display: block;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .contact-form .form-group {
+        flex: 1 1 100%; /* Cada campo ocupa el 100% del ancho */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #2a4d4d;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer .footer-info h3 {
+    margin: 0;
+    color: #d4f0f0;
+}
+
+footer .footer-social a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+footer .footer-social a:hover {
+    color: #d4f0f0;
+}
+
+footer .footer-bottom {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #d4f0f0;
+}
